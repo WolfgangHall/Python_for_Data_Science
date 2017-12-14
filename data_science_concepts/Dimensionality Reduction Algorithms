@@ -1,0 +1,127 @@
+Dimensionality Reduction Algorithms
+
+    - these tasks are rarely performed in isolation
+
+    - often preprocessing steps to support other tasks
+
+
+The Curse of Dimensionality
+
+    - 'dimensionality' simply refers to the number of features in the dataset
+    - when the number of features is very large relative to the number of observations in the dataset, algorithms struggle to train effective models
+        - especially relevant for clustering algorithms
+
+
+
+4. Feature Selection
+    -> filtering irrelevant or redundant features from the dataset
+
+    -> feature selection keeps a subset of the original features
+    -> feature extraction creates brand new features
+
+    - feature selection can be supervised (genetic algorithms) or unsupervised (variance threshholds)
+        -> can combine multiple methods if needed
+
+    4.1 Variance Threshholds
+        - remove features whose values dont change much from observation to observation
+            -> variance falls below a threshhold
+            -> these features provide little value
+
+        - should always normalize the data first, because variance is dependent on scale
+
+        Strengths:
+            - based on solid intuition
+            - features that dont change much dont add much information
+            - easy and relatively safe
+
+        Weaknesses:
+            - rarely sufficient
+            - setting and tuning can be difficult
+
+
+    4.2 Correlation Threshholds
+        - remove features that are highly correlated with others
+        - removes redundant info
+
+        - calculate all pair-wise correlations
+        - if the correlation is above a given threshhold
+            -> remove the one that has larger mean absolute correlation with other features
+
+        Strengths:
+            - based on solid intuition
+            - removal of redundant feautres
+
+        Weaknesses
+            - if you set parameters to low, you risk losing valuable information
+            - PCA is often a better alternative
+
+
+    4.3 Genetic Algorithms
+        - search algorithms
+
+        2 main uses:
+            1. optimization
+                -> finding th best weights for a neural network
+            2. supervised feature selection
+                - genes represent individual features
+                - the organism represents a candidate set of features
+
+    4.4 Stepwise Search
+        - forward stepsearch -> start with no features
+            -> then train a 1-feature model, and keep going until performance stalls
+        - backward stepsearch
+
+        - almost always underperforms
+
+
+
+5. Feature Extraction
+    - for creating a new, smaller set of features that still captures most of the useful information
+    - creates new features
+
+    - Deep learning has feature extraction built in
+
+    - can be supervised (LDA) or unsupervised (PCA)
+
+
+    5.1 Principal Component Analysis
+        -> unsupervised algorithm
+        -> creates linear combinations of the original features
+        -> new features are orthogonal, thus uncorrelated
+        -> ranked in order of their explained variance
+            => 1st principal component explains the most variance in the dataset
+            => 2nd explains the second most variance and so on
+
+        -> can reduce dimensionality by limiting the number of principal components to keep based on cumulative explained variance
+
+        - might decide to keep only as many principal components that reach a 90% rate of explained variance
+
+        *-> dataset should be normalized, transformation is dependent on scale
+            - if you dont, features that are on the largest scale would dominate new pc's
+
+        Strengths:
+            - fast and simple
+            - can easily test with and without PCA
+            - offers several variations and extensions
+
+        Weaknesses
+            - new principal components are not interpretable
+
+
+    5.2 Linear Discriminant Analysis
+        -> maximizes the separability between classes
+        -> can only be used with labeled data
+        -> dependent on scale, data should be normalized
+
+        Strengths:
+            - supervised, can improve predictive performance
+            - offers variations
+
+        Weaknesses:
+            - new features are not easily interpretable
+            - requires labeled data, more situational
+
+
+    5.3 Autoencoders
+        -> neural networks that are trained to reconstruct their original inputs
+        - unsupervised

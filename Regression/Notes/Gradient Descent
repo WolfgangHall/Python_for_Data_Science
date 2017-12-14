@@ -1,0 +1,41 @@
+Gradient Descent
+
+Gradient descent is sometimes described by the analogy of a blindfolded man who
+is trying to find his way from somewhere on a mountainside to the lowest point of
+the valley.
+
+Formally, gradient descent is an optimization algorithm that can be used to estimate
+the local minimum of a function
+
+
+We can use gradient descent to find the values of the model's parameters that
+minimize the value of the cost function
+
+
+Gradient descent iteratively updates the
+values of the model's parameters by calculating the partial derivative of the cost
+function at each step
+
+
+An important hyperparameter of gradient descent is the learning rate, which controls
+the size of the blindfolded man's steps
+
+ If the learning rate is small enough, the cost
+function will decrease with each iteration until gradient descent has converged on
+the optimal parameters
+
+however, the time required
+for gradient descent to converge increases; the blindfolded man will take longer to
+reach the valley if he takes small steps than if he takes large steps. If the learning
+rate is too large, the man may repeatedly overstep the bottom of the valley, that is,
+gradient descent could oscillate around the optimal values of the parameters
+
+
+Batch gradient descent, which is sometimes called only gradient descent,
+uses all of the training instances to update the model parameters in each iteration
+
+Stochastic Gradient Descent (SGD), in contrast, updates the parameters using
+only a single training instance in each iteration
+
+training instance is usually
+selected randomly

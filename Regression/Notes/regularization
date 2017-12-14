@@ -1,0 +1,23 @@
+Regularization is a collection of techniques that can be used to prevent over-fitting.
+Regularization adds information to a problem, often in the form of a penalty against
+complexity, to a problem
+
+
+Ridge regression,
+also known as Tikhonov regularization, penalizes model parameters that become
+too large
+
+Hyperparameters
+are parameters of the model that are not learned automatically and must be set
+manually
+
+
+LASSO penalizes the coefficients by adding their L1
+norm to the cost function
+
+The LASSO produces sparse parameters; most of the coefficients will become zero,
+and the model will depend on a small subset of the features.
+
+Finally,
+scikit-learn provides an implementation of elastic net regularization, which linearly
+combines the L1 and L2 penalties used by the LASSO and ridge regression.

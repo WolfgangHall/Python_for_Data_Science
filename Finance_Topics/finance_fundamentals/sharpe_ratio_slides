@@ -1,0 +1,54 @@
+- a portfolio is a set of allocations in a variety of securities
+    - 20% in apple
+    - 30% in ford
+    - 50% in google
+
+- percentages should add up to 100%
+
+-> daily returns
+    - percent returned from 1 day to the next for a stock
+
+-> cumulative return
+    - the amount returned after an entire time period
+
+-> avg. daily return
+    - mean of the daily returns
+
+-> std. daily return
+    - std dev of daily returns
+    - volatility
+
+Sharpe Ratio
+    - measure for calculating risk-adjusted return
+    - ratio has become industry standard
+    - Nobel laureate William F. Sharpe
+
+    S = ( (Rp - Rf) / sigma p )
+
+    Rp is expected portfolio return
+    Rf is risk-free return
+    sigma p is portfolio standard deviation
+
+    - What is risk free return?
+        => the return you would receive if you put your money in an investment such as a bank savings account, LIBOR, treasury bonds
+            - these are essentially 'risk free'
+
+            - these returns are very close to 0%
+
+            - federal reserve may raise interests rates in the futures
+
+    - assuming Rf is 0
+        SR = mean return / std dev
+
+    - originally thought of as a yearly metric
+        - mean yearly return vs mean daily return
+
+        -> we are usually dealing with weekly or daily data
+            - ratio is easy to fix
+
+    - annualized sharpe ratio can be obtained by multiplying against a k-factor off the sampling rate
+        - Daily -> K = sqrt(252)
+        - weekly -> K = sqrt(52)
+        - monthly -> K = sqrt(12)
+
+        ASR = K * SR

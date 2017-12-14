@@ -1,0 +1,44 @@
+reducing the dimensions of data with PCA
+    -> motivated by several problems
+
+1. can be used to mitigate problems caused by the curse of dimensionality
+
+2. dimensionality reduction can be used to compress data while minimizing the amount of information that is lost
+
+3. understanding the structure of data with hundreds of dimensions can be visualized easily
+
+
+- visualize a high-dimension dataset in two dimensions
+
+- used to search for patterns in high-dimensional data
+
+- used on high-dimensional data sets
+
+- reduces a set of possibly-correlated, high-dimensional variables to a lower-dimensional set of linearly uncorrelated synthetic variables
+    -> called principal components
+
+- lower dimensional data will preserve as much of the variance of the original data as possible
+
+- projecting data onto a lower dimensional subspace
+
+
+- PCA can be used to find a set of vectors that span a subspace
+    -> minimizes the sum of the squared errors of the projected data
+    -> will retain the greatest proportion of the original data set's variance
+
+- second principal component must be orthogonal to the first principal component
+    -> statistically independent
+    -> perpendicular
+
+- most useful when the variance in a data set is distributed unevenly across the dimensions
+
+
+
+- variance is a measure of how a set of values are spread out
+
+- Covariance is a measure of how much two variables change together; it is a measure of the strength of the correlation between two sets of variables.
+
+- vector is described by direction and magnitude (length)
+
+- eigenvectors of a matrix are the vectors that belong to and characterize the structure of the data
+

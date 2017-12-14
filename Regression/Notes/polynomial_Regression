@@ -1,0 +1,8 @@
+- adds terms with degrees greater than one to the model
+
+- quadratic regression -> regression with a second order polynomial
+
+
+We created an extremely complex
+model that fits the training data exactly, but fails to approximate the real relationship.
+This problem is called over-fitting.

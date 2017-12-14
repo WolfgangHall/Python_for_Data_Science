@@ -1,0 +1,5 @@
+ Categorical
+variables are commonly encoded using one-of-K or one-hot encoding, in which the
+explanatory variable is encoded using one binary feature for each of the variable's
+possible values
+

@@ -1,0 +1,14 @@
+Typical data science process
+
+1. Project scoping / data collection
+
+2. exploratory analysis
+
+3. data cleaning
+
+4. feature engineering
+
+5. model training
+    -> cross validation for hyperparameter tuning
+
+6. project delivery / insights

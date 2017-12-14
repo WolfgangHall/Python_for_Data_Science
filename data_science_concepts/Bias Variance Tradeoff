@@ -1,0 +1,65 @@
+Bias Variance Tradeoff
+
+    -> Bias vs Variance => two types of prediction errors
+        -> diagnose the performance of an algorithm by breaking down prediction errors
+
+    Bias
+        -> occurs when an algorithm has limited flexibility to learn the true signal from a dataset
+        -> the difference between your model's expected predictions and the true values
+
+    Vraiance
+        -> refers to an algorithms sensitivity to specific sets of training data
+
+
+    High Bias, Low Variance
+        -> models are consistent but innacurrate on average
+        -> darts are grouped but not in the middle
+
+        => Low variance
+            - tend to be less complex
+            - simple or rigid underlying structure
+
+            - Regression
+                => can be regularized to reduce complexity further
+            - Naive Bayes
+            - Linear algorithms
+            - Parametric algorithms
+
+        -> algorithms that are not complex enough produce underfit models that dont learn the signal from the data
+
+    High Variance, Low Bias
+        -> models are accurate on average but inconsistent
+        -> darts are near the middle, but not grouped
+
+        => Low Bias
+            - tend to be more complex
+            - flexible underlying structure
+
+            - Decision trees
+                - can be pruned to reduce complexity
+            - Nearest Neighbors
+            - Non-linear algorithms
+            - Non-parametric algorithms
+
+        -> algorithms that are too complex produce overfit models
+            - memorize the noise instead of the signal
+
+
+- Need to balance Bias and Variance to minimize the total error
+
+Total Error = Bias^2 + Variance + Irreducible Error
+
+    -> irreducible error is noise, can be reduced with better data cleaning
+        - things like inherent randomness, mis-framed problem, incomplete feature set
+
+
+Proper Workflow helps
+    - separate training and test sets
+    - try appropriate algorithms
+    - fit model parameters
+    - tune impactful hyperparameters
+    - proper performance metrics
+    - systematic cross validation
+
+
+- Ultimate goal of supervised machine learning is to isolate the signal while ignoring the noise in the dataset

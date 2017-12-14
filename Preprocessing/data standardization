@@ -1,0 +1,22 @@
+Many estimators perform better when they are trained on standardized data sets.
+Standardized data has zero mean and unit variance
+
+A feature vector
+has unit variance when the variances of its features are all of the same order of
+magnitude
+
+ If a feature's
+variance is orders of magnitude greater than the variances of the other features, that
+feature may dominate the learning algorithm and prevent it from learning from the
+other variables.
+
+
+ Some learning algorithms also converge to the optimal parameter
+values more slowly when data is not standardized
+
+
+
+The value of an explanatory
+variable can be standardized by subtracting the variable's mean and dividing the
+difference by the variable's standard deviation. Data can be easily standardized
+using scikit-learn's scale function

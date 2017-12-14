@@ -1,0 +1,24 @@
+Simple Linear Regression
+
+- goal is to predict the value of a continuous response variable
+
+- simple linear regression models a linear relationship between one response variable and one explanatory variable
+
+- a cost function, or loss function, is used to define and measure the error of a model
+
+- differences in prediction and observed prices in the training set are called residuals or training errors
+
+- differences between predicted and observed values in the test data are called prediction or test errors
+
+- produce best predictor by minimizing the sum of the residuals
+
+- Variance is a measure of how far a set of values is spread out.
+
+- A small variance indicates that the numbers are near the mean of the set
+
+Covariance is a measure of how much two variables change together
+
+R-squared measures how well
+the observed values of the response variables are predicted by the model. More
+concretely, r-squared is the proportion of the variance in the response variable that
+is explained by the model

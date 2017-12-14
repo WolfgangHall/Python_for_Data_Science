@@ -1,0 +1,237 @@
+Modern Machine Learning algorithms
+
+1. Regression
+
+    -> supervised learning task for modeling and predicting continuous, numeric outcomes
+        => Examples: predicting real estate prices, stock price movements, student test scores
+
+    -> characterized by labeled datasets that have a numeric target variable
+
+
+    1.1 (Regularized) Linear Regression
+        - one of the most common
+
+        -> attempts to fit a straight hyperplane to your dataset
+
+        - works well when there are linear relationships between the variables in the dataset
+
+        - often outclassed by its regularized counterparts (LASSO, Ridge, Elastic-Net)
+            - technique for penalizing large coefficients
+
+        Strengths:
+            - straightforward
+            - can be regularized to avoid overfitting
+            - updated easily
+                - Stochastic Gradient Descent?
+
+        Weaknesses:
+            - performs poorly when there are no linear relationships
+            - not naturally flexible enough to capture complex patters
+            - adding right parameters can be tricky
+
+
+    1.2 Regression Tree (Ensembles)
+        - repeatedly split dataset into branches that maximize the information gain of each split
+        - branching structure allows regression trees to naturally learn non-linear relationships
+
+        Ensemble Methods
+            - Random Forests
+                -> often perform well out of the box
+            - Gradient Boosted Trees
+                -> harder to tune
+                -> have higher performance ceilings
+
+            => both types combine predictions from many individual trees
+
+        Strengths:
+            - can learn non-linear relationships
+            - perform well
+
+        Weaknesses:
+            - prone to overfitting because they can keep branching until they memorize the data
+
+
+    1.3 Deep Learning
+        - multi-layer neural networks
+        - can learn extremely complex patterns
+        - use hidden layers between inputs and outputs
+        - requires lots of data
+
+    1.4 Nearest Neighbors
+        - make predictios for new observations by searching for the most similar training observations and pooling the values
+
+        - memory intensive
+        - performs poorly for high-dimensional data
+        - requires meaningful distance function
+
+
+
+    Training Regularized Regressions or making Tree Ensembles are best uses of time
+
+
+
+
+2. Classification
+
+    -> supervised learning task for modeling and predicting categorical variables
+    => Examples: predicting employee churn, email spam, financial fraud, student letter grades
+
+    -> many regression algorithms have classification counterparts
+        -> predict a class (or class probabilites) instead of real numbers
+
+
+    2.1 (Regularized) Logistic Regression
+        -> classification counterpart to linear regression
+
+        -> predictions mapped to between 0 and 1 through the logistic function
+            - interpreted as class probabilities
+
+        - models themselves are still 'linear'
+            -> work when classes are linearly separable
+
+        Strengths:
+            - nice probablistic interpretation
+            - can be regularized to avoid overfitting
+            - updated easily
+                - stochastic gradient descent
+
+        Weaknesses:
+            - tends to underperform when there are multiple or non-linear boundaries
+            - not naturally flexible enough to capture more complex relationships
+
+    2.2 Classification Tree (Ensembles)
+        - Classification and regression trees (CART)
+
+        Strengths:
+            - perform well in practice
+            - robust to outliers
+            - scalable
+            - able to naturally model non-linear decision boundaries
+
+        Weaknesses:
+            - unconstrained
+            - individual trees are prone to overfitting
+                - can be alleviated by ensemble methods
+
+    2.3 Deep Learning
+        - useful in image classification
+
+        Strengths:
+            - classifying audio, text and image data
+
+        Weaknesses:
+            - require large amount of data to train
+
+
+    2.4 Support Vector Machines
+        -> use a mechanism called kernels
+            -> calculate the distance between two observations
+            -> SVM finds decision boundary that maximizes the distance between the closest members of separate classes
+
+        - SVM with linear kernel is similar to Logistic Regression
+
+        - typically use non-linear kernels to model non-linear decision boundaries
+
+        Strengths:
+            - SVMs can model non-linear decision boundaries
+            - many kernels to choose from
+            - robust against overfitting
+                - especially in high dimensional space
+
+        Weaknesses:
+            - memory intensive
+            - tricker to tune
+                - harder to pick correct kernel
+
+
+    2.5 Naive Bayes
+
+        -> simple algorithm
+        -> based around conditional probability and counting
+        -> model is a probability table that gets updated through your training data
+
+        - called 'naive'
+            -> core independence
+
+
+        Strengths:
+            - conditional independence assumption rarely holds true
+                - still performs well
+            - simple
+            - scales with dataset
+
+        Weaknesses:
+            - simplistic
+            - other models are properly trained and tuned
+
+
+3. Clustering
+
+    - unsupervised learing task for finding natural groupings of observations (ie clusters) based on the inherent structure within the dataset
+
+    => Examples: customer segmentation, grouping similar items in e-commerce, social network analysis
+
+    - because it is unsupervised -> there is no 'right answer'
+
+    3.1 K Means
+        - general purpose algorithm that makes clusters based on geometric distances between points
+        - clusters are grouped around centroids
+            - globular
+            - have small sizes
+
+        Strengths:
+            - popular
+            - fast, simple, flexible
+
+            - pre-process your data and engineer useful features
+
+        Weaknesses:
+            - must specify number of clusters
+            - if true underlying clusters in your data are not globular, K-means will produce poor clusters
+
+
+    3.2 Affinity Propagation
+        - makes clusters based on graph distances between points
+        - clusters tend to be smaller and have uneven sizes
+
+        Strengths:
+            - user does not need to specify the number of clusters
+            - need to specify sample preferences and damping hyperparameters
+
+        Weaknesses:
+            - slow and memory-heavy
+            - difficult to scale larger datasets
+            - assumes true underlying clusters are globular
+
+    3.3 Hierarchical / Agglomerative
+        1. start with each point in its own cluster
+        2. for each cluster, merge it with another based on some criterion
+        3. repeat until only one cluster remains and you are left with a hierarchy of clusters
+
+        Strengths:
+            - clusters are assumed not to be globular
+            - scales well to large datasets
+
+        Weaknesses:
+            - user must choose the number of clusters
+
+
+    3.4 DBSCAN
+        - density based algorithm that makes clusters for dense regions of points
+
+        - HDBSCAN -> recent development
+            -> allows varying density clusters
+
+
+        Strengths:
+            - does not assume globular clusters
+            - performance is scalable
+
+            - does not need every point to be assigned to a cluster, reduces noise
+
+        Weaknesses:
+            - quite sensitive to its hyperparameters
+                - epsilon
+                - min_samples
+
+

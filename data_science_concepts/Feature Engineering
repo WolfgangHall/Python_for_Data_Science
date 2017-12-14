@@ -1,0 +1,86 @@
+Feature Engineering
+
+    - process of creating new input features for machine learning
+    - one of the most effective ways to improve predictive models
+
+    - can isolate key information
+    - highlight patterns
+    - bring in domain expertise
+
+    - no 'right' answer
+
+
+
+    1. Indicator variables
+        - using indicator variables to isolate key info
+
+        -> indicator variables from threshholds
+            age >= 21 on an alcohol study
+
+        -> indicator variables from multiple features
+            number of beds and number of bathrooms
+
+        -> indicator variable for special events
+            indicate black friday and christmas
+
+        -> indicator variable for groups of classes
+            splitting traffic source with whether or not its paid for
+
+
+    2. Interaction features
+        - highlight interactions between two or more features
+        - some fetures can be combined to provide more information than they would as individuals
+
+        - combos:
+            - sums
+            - difference
+            - product
+            - quotient
+
+
+    3. Feature Representation
+        - consider if you gain information by representing the same feature in a different way
+
+        -> date and time features
+            - grabbing day of week and hour of day from purchase date time
+
+        -> numeric to categorical mappings
+            - turn years in school to classes -> elementary, middle, high, college
+
+        -> grouping sparse classes
+            - if you have a feature with many classes that have low sample counts
+                -> group similar classes and have an other class
+
+        -> creating dummy variables
+            - do this after grouping sparse classes
+
+
+    4. External Data
+
+        -> time series data
+
+        -> external APIs
+
+        -> Geocoding
+
+        -> other sources of the same data
+
+
+    5. Error Analysis (Post-modeling)
+        - performed after training your first model
+        - analyzing the misclassified or high error observations from your model
+            -> decide next steps for improvement
+
+        - could be collecting more data, splitting problem apart, feature engineering
+
+        -> Start with larger errors
+            - check out higher error score problems first
+
+        -> segment by classes
+            - segment your observations and compare the average error within each segment
+            - try creating indicator variables for the segments with the highest errors
+
+        -> unsupervised clustering
+            - run unsupervised clustering algorithm on misclassied observations
+
+        -> ask collegues or domain experts

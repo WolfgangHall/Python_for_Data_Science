@@ -1,0 +1,27 @@
+logistic regression is used for classification
+tasks
+
+Ordinary linear regression assumes that the response variable is normally distributed.
+The normal distribution, also known as the Gaussian distribution or bell curve, is a
+function that describes the probability that an observation will have a value between
+any two real numbers.
+
+
+ For instance,
+a coin toss can result in two outcomes: heads or tails. The Bernoulli distribution
+describes the probability distribution of a random variable that can take the positive
+case with probability P or the negative case with probability 1-P
+
+
+In logistic regression, the response variable describes the probability that the outcome
+is the positive case. If the response variable is equal to or exceeds a discrimination
+threshold, the positive class is predicted; otherwise, the negative class is predicted.
+
+The
+response variable is modeled as a function of a linear combination of the explanatory
+variables using the logistic function. Given by the following equation, the logistic
+function always returns a value between zero and one
+
+
+The logit function is the inverse of the logistic function. It links ( ) F x back to a linear
+combination of the explanatory variables
